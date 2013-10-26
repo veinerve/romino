@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spritz</title>
+  <style>
+    html, body{
+      overflow-x: hidden;
+      margin:0;
+      padding:0;
+    }
+    @-webkit-keyframes running
+    {
+      0% {background-position: 0px 0px; }
+      33% {background-position: 400px 0px; }
+      66% {background-position: 800px 0px; }
+    }
+    @-webkit-keyframes moving
+    {
+      from {margin-left: -400px; }
+      to {margin-left: 100%; }
+    }
+    
+    #man{
+      background-image: url(spritz.png);
+      height:700px;
+      width: 400px;
+      margin-bottom:-25px;
+    }
+    .running{  
+      -webkit-animation:running 0.4s steps(1) infinite;
+      -webkit-transition: background, ease-in, 0s;
+    }
+    .moving{
+      -webkit-animation:moving 5s linear infinite;
+      -webkit-transition: background, ease-in, 0s;
+    }
+    #floor{
+      border-bottom: 10px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div id="floor">
+  <div class="moving">
+    <div id="man" class="running"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
